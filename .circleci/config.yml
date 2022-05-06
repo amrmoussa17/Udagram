@@ -12,6 +12,7 @@ jobs:
       - aws-cli/setup
       - eb/setup
       - checkout
+      # install dependencies
       - run:
           name: Front-End Install
           command: |
@@ -20,6 +21,7 @@ jobs:
           name: Back-End Install
           command: |
             npm run backend:install
+      # build app
       - run:
           name: Front-End Build
           command: |
@@ -28,6 +30,7 @@ jobs:
           name: Back-End Build
           command: |
             npm run backend:build
+      # deploy app
       - run:
           name: front-End deploy
           command: |
