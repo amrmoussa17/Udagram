@@ -24,9 +24,6 @@ deploy:
 
 6. type `aws configure` and enter your aws credentials
 7. in command prompt type `eb create –sample udagram-api-dev` to create a sample app server
-8. in aws console , in the created environment udagram-api-dev go to env configuration and set app environment variables which includes POSTGRES_HOST, POSTGRES_USERNAME, POSTGRES_DB, POSTGRES_PASSWORD, PORT, DB_PORT, JWT_SECRET
-
-- NB: ** link your created RDS database to the server using env variables **
 
 ## setting up frontend app using s3
 

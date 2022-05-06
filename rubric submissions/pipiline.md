@@ -1,9 +1,9 @@
 # pipeline docs
 
-1. inside app server-code add a deploy script using
+1. inside app server-code add a separate file for deploy script and set all environment variables using ` eb setenv key=$value`. also add the following code
 
 ```
-b deploy udagram-api-dev --profile default
+eb deploy udagram-api-dev
 ```
 
 2. inside frontend code add a separate file for deploy script and add the following code
@@ -34,13 +34,15 @@ aws s3 cp --recursive --acl public-read ./www s3://udagram-frontend-361250016004
   }
 ```
 
-5. add a config.yml inside .circleci folder to intialize circleci setup
+5. add a config.yml inside .circleci folder to initialize circleci setup
 
-6. configure orbs to include nodejs, aws cli and eb cli
+6. set up environment variables in circleci
 
-7. add a build job and configure to use a docker container image
+7. configure orbs to include nodejs, aws cli and eb cli
 
-8. add steps to build job which includes
+8. add a build job and configure to use a docker container image
+
+9. add steps to build job which includes
 
 - installing dependencies for frontend and backend
 - building app for frontend and backend
